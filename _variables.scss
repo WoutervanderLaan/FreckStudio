@@ -1,0 +1,37 @@
+////////// Fonts //////////
+$logo-font: "Baumans", cursive;
+$main-font: "Roboto Slab", serif;
+$secondary-font: "Rubik", sans-serif;
+
+////////// Main Theme //////////
+$body-background: #fff;
+$main-text-color: #000;
+$secondary-text-color: #fff;
+$first-color: #4900a3;
+$secondary-color: #ec8eaa;
+$third-color: #ffe5eb;
+$fourth-color: #48a8e9;
+$fifth-color: #247301;
+$sixth-color: #e0e0e0;
+$button-gradient-one: linear-gradient(90deg, #ec8eaa, #4900a3);
+$button-gradient-extra: linear-gradient(
+  90deg,
+  #ffca49,
+  #ff9561,
+  #ef78cf,
+  #9137ff
+);
+$button-gradient-two: linear-gradient(90deg, #6effd7, #78ff84);
+
+////////// Dark Theme //////////
+$body-background-dark: #141e14;
+$main-text-color-dark: #fff;
+$secondary-text-color-dark: #2b553b;
+$first-color-dark: #200246;
+
+////////// Mixins //////////
+@mixin flexDiv($flexDir) {
+  display: flex;
+  flex-direction: $flexDir;
+  align-items: center;
+}
