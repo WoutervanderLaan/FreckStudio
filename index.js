@@ -11,6 +11,7 @@ const slider = document.querySelector("#sliderCircle");
 const avatarContainer = document.querySelector("#avatarContainer");
 const avatar = document.querySelector("#avatar");
 const hand = document.querySelector("#hand");
+const shadow = document.querySelector("#shadow");
 
 class App {
   #cursorBoolean = false;
@@ -26,6 +27,7 @@ class App {
     this._hideSections();
     this._initMagneticArea();
 
+    document.addEventListener("DOMContentLoaded", this._rearrange.bind(this));
     document.addEventListener("mousemove", this._moveAvatar);
     document.addEventListener("mousemove", this._cursorInit.bind(this));
     document.addEventListener("mouseover", this._cursorColorChange);
@@ -43,6 +45,7 @@ class App {
   ///////// Cursor related methods /////////
 
   _cursorInit(e) {
+    if (window.visualViewport.width < 1100) return;
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     cursor.style.display = "block";
     if (!this.#cursorBoolean) {
@@ -83,6 +86,12 @@ class App {
   ///////// Avatar related methods /////////
 
   _moveAvatar(e) {
+    hand.style =
+      avatar.style =
+      shadow.style.transform =
+        `translateX(${0}px) translateY(${0}px)`;
+    if (window.visualViewport.width < 1100) return;
+
     document.querySelectorAll(".object").forEach((object) => {
       const movingValue = object.getAttribute("data-value");
       const x = (e.clientX * movingValue) / 250;
@@ -113,6 +122,7 @@ class App {
   ///////// Magnetic btn related methods /////////
 
   _initMagneticArea() {
+    if (window.visualViewport.width < 1100) return;
     magneticAreas.forEach((mArea, index) => {
       mArea.addEventListener("mousemove", (e) => {
         this._magnetizeButton(e, index);
@@ -181,6 +191,14 @@ class App {
         });
       });
     }
+  }
+
+  ///////// Responsiveness related methods /////////
+
+  _rearrange() {
+    if (window.visualViewport.width >= 1100) return;
+    document.querySelector("#introText").children[1].innerHTML =
+      "We partner with global brands and emerging businesses to create exciting and meaningful experiences, whether digital or non-digital.";
   }
 }
 
