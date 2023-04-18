@@ -143,9 +143,9 @@ body #section1 #avatarContainer {
   align-items: center;
   justify-content: center;
   padding-top: 50px;
+  padding-left: 50px;
   height: 600px;
   width: 50%;
-  /* z-index: -2; */
   position: relative;
   overflow: hidden;
 }
@@ -415,6 +415,7 @@ body footer {
     margin-top: -80px;
   }
   .responsive #section1 #avatarContainer {
+    width: 100%;
     padding: 0;
     margin-top: 50px;
   }
@@ -433,7 +434,6 @@ body footer {
     justify-content: space-around;
   }
   .responsive #section1 #avatarContainer {
-    width: 100%;
     padding: 0;
     margin-top: 20px;
   }

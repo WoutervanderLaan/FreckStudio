@@ -169,29 +169,18 @@ class App {
       x: direction,
     });
 
-    if (this.#themeBoolean) {
-      avatarContainer.style.opacity = "0";
-      avatar.src = "img/MemojiDark.png";
-      hand.src = "img/MemojiHandDark.png";
+    avatarContainer.style.opacity = "0";
 
-      avatar.addEventListener("load", () => {
-        gsap.to(avatarContainer, {
-          opacity: 1,
-        });
+    const dark = this.#themeBoolean ? "Dark" : "";
+
+    avatar.src = `img/Memoji${dark}.png`;
+    hand.src = `img/MemojiHand${dark}.png`;
+
+    avatar.addEventListener("load", () => {
+      gsap.to(avatarContainer, {
+        opacity: 1,
       });
-    }
-
-    if (!this.#themeBoolean) {
-      avatarContainer.style.opacity = "0";
-      avatar.src = "img/Memoji.png";
-      hand.src = "img/MemojiHand.png";
-
-      avatar.addEventListener("load", () => {
-        gsap.to(avatarContainer, {
-          opacity: 1,
-        });
-      });
-    }
+    });
   }
 
   ///////// Responsiveness related methods /////////
@@ -200,7 +189,7 @@ class App {
     if (window.visualViewport.width < 550) {
       document.querySelector("#introText").children[1].innerHTML =
         "We partner with global brands and emerging businesses to create exciting and meaningful experiences, whether digital or non-digital.";
-    } else {
+    } else if (window.visualViewport.width >= 550) {
       document.querySelector("#introText").children[1].innerHTML =
         "We partner with global brands and emerging businesses <br> to create exciting and meaningful experiences, whether <br> digital or non-digital.";
     }
