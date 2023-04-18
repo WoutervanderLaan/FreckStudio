@@ -44,7 +44,7 @@ $first-color-dark: #200246;
   }
 
   @if $breakpoint == mobile {
-    @media only screen and (max-width: 500px) {
+    @media only screen and (max-width: 550px) {
       @content;
     }
   }

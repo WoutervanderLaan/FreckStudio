@@ -27,7 +27,8 @@ class App {
     this._hideSections();
     this._initMagneticArea();
 
-    document.addEventListener("DOMContentLoaded", this._rearrange.bind(this));
+    window.addEventListener("resize", this._rearrange);
+    document.addEventListener("DOMContentLoaded", this._rearrange);
     document.addEventListener("mousemove", this._moveAvatar);
     document.addEventListener("mousemove", this._cursorInit.bind(this));
     document.addEventListener("mouseover", this._cursorColorChange);
@@ -196,9 +197,13 @@ class App {
   ///////// Responsiveness related methods /////////
 
   _rearrange() {
-    if (window.visualViewport.width >= 1100) return;
-    document.querySelector("#introText").children[1].innerHTML =
-      "We partner with global brands and emerging businesses to create exciting and meaningful experiences, whether digital or non-digital.";
+    if (window.visualViewport.width < 550) {
+      document.querySelector("#introText").children[1].innerHTML =
+        "We partner with global brands and emerging businesses to create exciting and meaningful experiences, whether digital or non-digital.";
+    } else {
+      document.querySelector("#introText").children[1].innerHTML =
+        "We partner with global brands and emerging businesses <br> to create exciting and meaningful experiences, whether <br> digital or non-digital.";
+    }
   }
 }
 
