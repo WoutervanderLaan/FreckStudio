@@ -160,6 +160,37 @@ body #section1 #avatarContainer #shadow {
   position: absolute;
   max-height: 600px;
 }
+body #companyDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: -100px 0 40px;
+}
+body #companyDiv p {
+  z-index: 1;
+  margin-bottom: 40px;
+}
+body #companyDiv #logos {
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+body #companyDiv #logos .grayscale {
+  opacity: 50%;
+  transition: all 0.1s;
+  filter: grayscale(100%);
+}
+body #companyDiv #logos .grayscale img {
+  width: 100px;
+}
+body #companyDiv #logos .grayscale:hover {
+  filter: none;
+  opacity: 100%;
+}
 body #section2 {
   position: relative;
   display: flex;
@@ -355,6 +386,9 @@ body footer {
 .darkTheme #section1 #avatarContainer {
   background-color: #141e14;
 }
+.darkTheme #companyDiv #logos .grayscale img {
+  filter: invert(100%) grayscale(100%);
+}
 .darkTheme #section2 {
   background-color: #2b553b;
   color: #ec8eaa;
@@ -418,6 +452,9 @@ body footer {
     width: 100%;
     padding: 0;
     margin-top: 50px;
+  }
+  .responsive #companyDiv {
+    margin: 0 0 40px;
   }
   .responsive #section3 {
     display: flex;

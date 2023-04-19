@@ -171,16 +171,36 @@ class App {
 
     avatarContainer.style.opacity = "0";
 
-    const dark = this.#themeBoolean ? "Dark" : "";
+    const reloadImg = async function (boolean) {
+      try {
+        const dark = boolean ? "Dark" : "";
 
-    avatar.src = `img/Memoji${dark}.png`;
-    hand.src = `img/MemojiHand${dark}.png`;
+        const avatarImg = await new Promise(function (resolve, reject) {
+          avatar.addEventListener("load", () => resolve(avatar));
+          avatar.addEventListener("error", () =>
+            reject(new Error(`Error loading image of avatar.`))
+          );
+          avatar.src = `img/Memoji${dark}.png`;
+        });
 
-    avatar.addEventListener("load", () => {
-      gsap.to(avatarContainer, {
-        opacity: 1,
-      });
-    });
+        const handImg = await new Promise((resolve, reject) => {
+          hand.addEventListener("load", () => resolve(hand));
+          hand.addEventListener("error", () =>
+            reject(new Error(`Error loading image of hand.`))
+          );
+          hand.src = `img/MemojiHand${dark}.png`;
+        });
+
+        await Promise.all([avatarImg, handImg]);
+        gsap.to(avatarContainer, {
+          opacity: 1,
+        });
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    reloadImg(this.#themeBoolean);
   }
 
   ///////// Responsiveness related methods /////////

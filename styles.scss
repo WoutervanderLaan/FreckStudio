@@ -164,6 +164,33 @@ body {
       }
     }
   }
+  #companyDiv {
+    @include variables.flexDiv(column);
+    margin: -100px 0 40px;
+    p {
+      z-index: 1;
+      margin-bottom: 40px;
+    }
+    #logos {
+      z-index: 1;
+      @include variables.flexDiv(row);
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+      .grayscale {
+        opacity: 50%;
+        img {
+          width: 100px;
+        }
+        transition: all 0.1s;
+        filter: grayscale(100%);
+        &:hover {
+          filter: none;
+          opacity: 100%;
+        }
+      }
+    }
+  }
 
   #section2 {
     position: relative;
@@ -351,6 +378,15 @@ body {
       background-color: variables.$body-background-dark;
     }
   }
+  #companyDiv {
+    #logos {
+      .grayscale {
+        img {
+          filter: invert(100%) grayscale(100%);
+        }
+      }
+    }
+  }
   #section2 {
     background-color: variables.$secondary-text-color-dark;
     color: variables.$secondary-color;
@@ -414,6 +450,9 @@ body {
         padding: 0;
         margin-top: 50px;
       }
+    }
+    #companyDiv {
+      margin: 0 0 40px;
     }
     #section3 {
       @include variables.flexDiv(column);
