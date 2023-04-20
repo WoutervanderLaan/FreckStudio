@@ -26,6 +26,7 @@ class App {
     this._initCursorSizeChange();
     this._hideSections();
     this._initMagneticArea();
+    this._avatarAnimate();
 
     window.addEventListener("resize", this._rearrange);
     document.addEventListener("DOMContentLoaded", this._rearrange);
@@ -99,6 +100,18 @@ class App {
       const y = (e.clientY * movingValue) / 250;
 
       object.style.transform = `translateX(${x}px) translateY(${y}px)`;
+    });
+  }
+
+  _avatarAnimate() {
+    if (window.visualViewport.width >= 1100) return;
+    document.querySelectorAll(".object").forEach((object) => {
+      const movingValue = object.getAttribute("data-value");
+      gsap.to(object, {
+        y: 1 * movingValue,
+        yoyoEase: true,
+        repeat: -1,
+      });
     });
   }
 

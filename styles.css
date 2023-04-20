@@ -164,7 +164,7 @@ body #companyDiv {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: -100px 0 40px;
+  margin: -100px 0 80px;
 }
 body #companyDiv p {
   z-index: 1;
@@ -175,7 +175,7 @@ body #companyDiv #logos {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 40px;
+  gap: 50px;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -186,6 +186,7 @@ body #companyDiv #logos .grayscale {
 }
 body #companyDiv #logos .grayscale img {
   width: 100px;
+  max-height: 30px;
 }
 body #companyDiv #logos .grayscale:hover {
   filter: none;
@@ -454,7 +455,7 @@ body footer {
     margin-top: 50px;
   }
   .responsive #companyDiv {
-    margin: 0 0 40px;
+    margin: 0 0 80px;
   }
   .responsive #section3 {
     display: flex;
