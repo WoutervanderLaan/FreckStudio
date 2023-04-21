@@ -6,7 +6,7 @@
 body {
   margin: 0;
 }
-body #innerBody {
+body #inner--body {
   position: relative;
   max-width: 1400px;
   font-family: "Rubik", sans-serif;
@@ -59,29 +59,6 @@ body section {
 body .section--hidden {
   opacity: 0;
 }
-body .slider {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  border-radius: 30px;
-  border: 3px solid;
-  height: 30px;
-  width: 60px;
-  transition: all 0.2s ease-in-out;
-  z-index: 0;
-}
-body .slider img {
-  z-index: -1;
-  padding: 6px;
-}
-body .slider #sliderCircle {
-  position: absolute;
-  left: 0;
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-}
 body nav {
   z-index: 2;
   display: flex;
@@ -101,13 +78,13 @@ body nav #menu {
   justify-content: space-between;
   width: 300px;
 }
-body nav #menu .magnetic-wrap {
+body nav #menu .magnetic--wrap {
   display: block;
   position: relative;
   justify-content: center;
   align-items: center;
 }
-body nav #menu .magnetic-wrap .magnetic-area {
+body nav #menu .magnetic--wrap .magnetic--area {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -119,7 +96,7 @@ body nav #menu .magnetic-wrap .magnetic-area {
   right: -70px;
   border-radius: 50%;
 }
-body nav #menu .magnetic-wrap .magnetic-area .my-button {
+body nav #menu .magnetic--wrap .magnetic--area .my--button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -127,16 +104,39 @@ body nav #menu .magnetic-wrap .magnetic-area .my-button {
   height: 80px;
   border-radius: 50%;
 }
-body #section1 {
+body .slider {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 30px;
+  border: 3px solid;
+  height: 30px;
+  width: 60px;
+  transition: all 0.2s ease-in-out;
+  z-index: 0;
+}
+body .slider img {
+  z-index: -1;
+  padding: 6px;
+}
+body .slider #slider--circle {
+  position: absolute;
+  left: 0;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+body #text--avatar {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-body #section1 #introText {
+body #text--avatar #intro--text {
   padding-top: 30px;
   width: 50%;
 }
-body #section1 #avatarContainer {
+body #text--avatar #avatar--container {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -148,28 +148,28 @@ body #section1 #avatarContainer {
   position: relative;
   overflow: hidden;
 }
-body #section1 #avatarContainer #avatar {
+body #text--avatar #avatar--container #avatar {
   max-height: 600px;
 }
-body #section1 #avatarContainer #hand {
+body #text--avatar #avatar--container #hand {
   position: absolute;
   max-height: 600px;
 }
-body #section1 #avatarContainer #shadow {
+body #text--avatar #avatar--container #shadow {
   position: absolute;
   max-height: 600px;
 }
-body #companyDiv {
+body #company--logos {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: -100px 0 80px;
 }
-body #companyDiv p {
+body #company--logos p {
   z-index: 1;
   margin-bottom: 40px;
 }
-body #companyDiv #logos {
+body #company--logos #logos {
   z-index: 1;
   display: flex;
   flex-direction: row;
@@ -178,60 +178,62 @@ body #companyDiv #logos {
   flex-wrap: wrap;
   justify-content: center;
 }
-body #companyDiv #logos .grayscale {
+body #company--logos #logos .grayscale {
   opacity: 50%;
   transition: all 0.1s;
   filter: grayscale(100%);
 }
-body #companyDiv #logos .grayscale img {
+body #company--logos #logos .grayscale img {
   width: 100px;
   max-height: 30px;
 }
-body #companyDiv #logos .grayscale:hover {
+body #company--logos #logos .grayscale:hover {
   filter: none;
   opacity: 100%;
 }
-body #section2 {
+body .card {
   position: relative;
+  box-sizing: border-box;
+  height: 800px;
+  border-radius: 40px;
+  padding: 0 10%;
+  margin-bottom: 40px;
+  text-align: center;
+  width: 100%;
+}
+body #section--who {
+  overflow: hidden;
+}
+body #section--who .card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  border-radius: 40px;
-  height: 800px;
-  padding: 0 10%;
-  margin-bottom: 40px;
-  overflow: hidden;
 }
-body #section2 #placeholder {
+body #section--who #desk {
   position: absolute;
   width: 75%;
   margin-top: auto;
   bottom: 0;
   z-index: 0;
 }
-body #section3 {
+body #section--what {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   gap: 40px;
-  margin-bottom: 40px;
 }
-body #section3 h1 {
+body #section--what h1 {
   font-size: 6rem;
   margin: 0;
 }
-body #section3 #sectionPink {
+body #section--what #section--pink {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  border-radius: 40px;
-  height: 800px;
   width: 50%;
 }
-body #section3 #sectionPink #arm {
+body #section--what #section--pink #arm {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -243,182 +245,187 @@ body #section3 #sectionPink #arm {
   justify-content: center;
   text-align: center;
 }
-body #section3 #sectionBlack {
+body #section--what #section--black {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  border-radius: 40px;
-  height: 800px;
   width: 50%;
 }
-body #section4 {
+body #section--work .card {
   display: flex;
-  background-color: #e0e0e0;
-  border-radius: 40px;
-  height: 800px;
-  padding: 0 10%;
-  margin-bottom: 40px;
+  flex-direction: column;
+  align-items: center;
 }
 body footer {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  color: #48a8e9;
 }
 
-.lightTheme {
+.light--theme {
   background-color: #fff;
   color: #000;
 }
-.lightTheme #innerBody {
+.light--theme #inner--body {
   background-color: #fff;
 }
-.lightTheme #cursor {
+.light--theme #cursor {
   background-color: #000;
 }
-.lightTheme h1 {
+.light--theme h1 {
   color: #000;
 }
-.lightTheme h2 {
+.light--theme h2 {
   color: #000;
 }
-.lightTheme h3 {
+.light--theme h3 {
   color: #000;
 }
-.lightTheme h4 {
+.light--theme h4 {
   color: #000;
 }
-.lightTheme h5 {
+.light--theme h5 {
   color: #e0e0e0;
 }
-.lightTheme nav {
+.light--theme nav {
   background-color: #fff;
 }
-.lightTheme nav .slider {
+.light--theme nav .slider {
   border-color: #4900a3;
   background-color: #4900a3;
 }
-.lightTheme nav .slider img {
+.light--theme nav .slider img {
   fill: #4900a3;
 }
-.lightTheme nav .slider #sliderCircle {
+.light--theme nav .slider #slider--circle {
   background-color: #48a8e9;
 }
-.lightTheme #section1 {
+.light--theme #landing--page {
   background-color: #fff;
 }
-.lightTheme #section1 #introText {
+.light--theme #landing--page #intro--text {
   background-color: #fff;
 }
-.lightTheme #section1 #avatarContainer {
+.light--theme #landing--page #avatar--container {
   background-color: #fff;
 }
-.lightTheme #section2 {
+.light--theme #section--who .card {
   background-color: #4900a3;
   color: #48a8e9;
 }
-.lightTheme #section2 h1 {
+.light--theme #section--who h1 {
   color: #48a8e9;
 }
-.lightTheme #section3 {
+.light--theme #section--what {
   background-color: #fff;
 }
-.lightTheme #section3 #sectionBlack {
+.light--theme #section--what #section--black {
   background-color: #000;
   color: #fff;
 }
-.lightTheme #section3 #sectionBlack h2 {
+.light--theme #section--what #section--black h2 {
   color: #fff;
 }
-.lightTheme #section3 #sectionPink {
+.light--theme #section--what #section--pink {
   background-color: #ffe5eb;
   color: #247301;
 }
-.lightTheme #section3 #sectionPink h2 {
+.light--theme #section--what #section--pink h2 {
   color: #247301;
 }
+.light--theme #section--work .card {
+  background-color: #e0e0e0;
+}
+.light--theme footer {
+  color: #48a8e9;
+}
 
-.darkTheme {
+.dark--theme {
   background-color: #141e14;
   color: #fff;
 }
-.darkTheme #innerBody {
+.dark--theme #inner--body {
   background-color: #141e14;
 }
-.darkTheme #cursor {
+.dark--theme #cursor {
   background-color: #fff;
 }
-.darkTheme h1 {
+.dark--theme h1 {
   color: #fff;
 }
-.darkTheme h2 {
+.dark--theme h2 {
   color: #fff;
 }
-.darkTheme h3 {
+.dark--theme h3 {
   color: #fff;
 }
-.darkTheme h4 {
+.dark--theme h4 {
   color: #fff;
 }
-.darkTheme h5 {
+.dark--theme h5 {
   color: #e0e0e0;
 }
-.darkTheme nav {
+.dark--theme nav {
   background-color: #141e14;
 }
-.darkTheme nav .slider {
+.dark--theme nav .slider {
   border-color: #2b553b;
 }
-.darkTheme nav .slider svg {
+.dark--theme nav .slider svg {
   fill: #2b553b;
 }
-.darkTheme nav .slider #sliderCircle {
+.dark--theme nav .slider #slider--circle {
   background-color: #2b553b;
 }
-.darkTheme #section1 {
+.dark--theme #landing--page {
   background-color: #141e14;
 }
-.darkTheme #section1 #introText {
+.dark--theme #landing--page #intro--text {
   background-color: #141e14;
 }
-.darkTheme #section1 #avatarContainer {
+.dark--theme #landing--page #avatar--container {
   background-color: #141e14;
 }
-.darkTheme #companyDiv #logos .grayscale img {
+.dark--theme #company--logos #logos .grayscale img {
   filter: invert(100%) grayscale(100%);
 }
-.darkTheme #section2 {
+.dark--theme #section--who .card {
   background-color: #2b553b;
   color: #ec8eaa;
 }
-.darkTheme #section2 h1 {
+.dark--theme #section--who .card h1 {
   color: #ec8eaa;
 }
-.darkTheme #section3 {
+.dark--theme #section--what {
   background-color: #141e14;
 }
-.darkTheme #section3 #sectionBlack {
+.dark--theme #section--what #section--black {
   background-color: #fff;
   color: #2b553b;
 }
-.darkTheme #section3 #sectionBlack h2 {
+.dark--theme #section--what #section--black h2 {
   color: #141e14;
 }
-.darkTheme #section3 #sectionPink {
+.dark--theme #section--what #section--pink {
   background-color: #ffe5eb;
   color: #247301;
 }
-.darkTheme #section3 #sectionPink h2 {
+.dark--theme #section--what #section--pink h2 {
   color: #247301;
+}
+.dark--theme #section--work .card {
+  background-color: #e0e0e0;
+}
+.dark--theme footer {
+  color: #48a8e9;
 }
 
 @media only screen and (max-width: 1100px) {
   .responsive * {
     cursor: default;
   }
-  .responsive #innerBody {
+  .responsive #inner--body {
     margin: 0;
     padding: 0 20px;
   }
@@ -435,34 +442,36 @@ body footer {
     position: absolute;
     right: 20px;
   }
-  .responsive #section1 {
+  .responsive #text--avatar {
     flex-direction: column-reverse;
     align-items: center;
   }
-  .responsive #section1 #introText {
+  .responsive #text--avatar #intro--text {
     z-index: 1;
     width: 100%;
     text-align: center;
     padding: 0 0 80px;
   }
-  .responsive #section1 #introText h1 {
+  .responsive #text--avatar #intro--text h1 {
     margin-top: -80px;
   }
-  .responsive #section1 #avatarContainer {
+  .responsive #text--avatar #avatar--container {
     width: 100%;
     padding: 0;
     margin-top: 50px;
   }
-  .responsive #companyDiv {
+  .responsive #company--logos {
     margin: 0 0 80px;
   }
-  .responsive #section3 {
+  .responsive #section--what {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 0;
   }
-  .responsive #section3 #sectionPink,
-  .responsive #section3 #sectionBlack {
+  .responsive #section--what #section--pink,
+  .responsive #section--what #section--black {
+    box-sizing: border-box;
     width: 100%;
   }
 }
@@ -470,19 +479,19 @@ body footer {
   .responsive nav #menu {
     justify-content: space-around;
   }
-  .responsive #section1 #avatarContainer {
+  .responsive #landing--page #text--avatar #avatar--container {
     padding: 0;
     margin-top: 20px;
   }
-  .responsive #section1 #avatarContainer #avatar,
-  .responsive #section1 #avatarContainer #hand,
-  .responsive #section1 #avatarContainer #shadow {
+  .responsive #landing--page #text--avatar #avatar--container #avatar,
+  .responsive #landing--page #text--avatar #avatar--container #hand,
+  .responsive #landing--page #text--avatar #avatar--container #shadow {
     max-height: 500px;
   }
-  .responsive #section2 #placeholder {
+  .responsive #section--who #desk {
     display: none;
   }
-  .responsive #section3 h2 {
+  .responsive #section--what h2 {
     margin: 40px 10px;
   }
   .responsive h1 {

@@ -40,13 +40,16 @@ $first-color-dark: #200246;
 }
 
 @mixin cards($cardWidth) {
-  transition: transform 1s, opacity 1s;
-  width: $cardWidth;
+  position: relative;
+  box-sizing: border-box;
   height: 800px;
   border-radius: 40px;
   padding: 0 10%;
   margin-bottom: 40px;
   text-align: center;
+  @if $cardWidth {
+    width: $cardWidth;
+  }
 }
 
 @mixin devices($breakpoint) {

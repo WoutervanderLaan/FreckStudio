@@ -4,11 +4,11 @@ const cursor = document.getElementById("cursor");
 const copyright = document.getElementById("copyright");
 const anchorTags = document.querySelectorAll("a");
 const allSections = document.querySelectorAll(".section");
-const magneticAreas = document.querySelectorAll(".magnetic-area");
-const magneticButtons = document.querySelectorAll(".my-button");
-const nightDaySlider = document.querySelector("#nightDay");
-const slider = document.querySelector("#sliderCircle");
-const avatarContainer = document.querySelector("#avatarContainer");
+const magneticAreas = document.querySelectorAll(".magnetic--area");
+const magneticButtons = document.querySelectorAll(".my--button");
+const nightDaySlider = document.querySelector("#night--day");
+const slider = document.querySelector("#slider--circle");
+const avatarContainer = document.querySelector("#avatar--container");
 const avatar = document.querySelector("#avatar");
 const hand = document.querySelector("#hand");
 const shadow = document.querySelector("#shadow");
@@ -173,8 +173,8 @@ class App {
 
   _lightDarkSwitch() {
     this.#themeBoolean = !this.#themeBoolean;
-    document.body.classList.toggle("lightTheme");
-    document.body.classList.toggle("darkTheme");
+    document.body.classList.toggle("light--theme");
+    document.body.classList.toggle("dark--theme");
 
     const direction = this.#themeBoolean ? "30px" : "0px";
     gsap.to(slider, {
@@ -219,10 +219,10 @@ class App {
 
   _rearrange() {
     if (window.visualViewport.width < 550) {
-      document.querySelector("#introText").children[1].innerHTML =
+      document.querySelector("#intro--text").children[1].innerHTML =
         "We partner with global brands and emerging businesses to create exciting and meaningful experiences, whether digital or non-digital.";
     } else if (window.visualViewport.width >= 550) {
-      document.querySelector("#introText").children[1].innerHTML =
+      document.querySelector("#intro--text").children[1].innerHTML =
         "We partner with global brands and emerging businesses <br> to create exciting and meaningful experiences, whether <br> digital or non-digital.";
     }
   }

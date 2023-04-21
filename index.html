@@ -12,10 +12,10 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script defer src="index.js"></script>
   </head>
-  <body class="lightTheme responsive">
+  <body class="light--theme responsive">
     <div id="cursor" style="display: none"></div>
-    <div id="innerBody">
-      <header>
+    <div id="inner--body">
+
         <nav>
           <div id="logo">
             <a href="#">
@@ -23,112 +23,115 @@
             </a>
           </div>
           <div id="menu">
-            <a href="#section2" class="magnetic-wrap">
-              <div class="magnetic-area">
-                <h4 class="my-button">WHO</h4>
+            <a href="#section--who" class="magnetic--wrap">
+              <div class="magnetic--area">
+                <h4 class="my--button">WHO</h4>
               </div>
             </a>
-            <a href="#section3" class="magnetic-wrap">
-              <div class="magnetic-area">
-                <h4 class="my-button">WHAT</h4>
+            <a href="#section--what" class="magnetic--wrap">
+              <div class="magnetic--area">
+                <h4 class="my--button">WHAT</h4>
               </div>
             </a>
-            <a href="#section4" class="magnetic-wrap">
-              <div class="magnetic-area">
-                <h4 class="my-button">WORK</h4>
+            <a href="#section--work" class="magnetic--wrap">
+              <div class="magnetic--area">
+                <h4 class="my--button">WORK</h4>
               </div>
             </a>
           </div>
-          <div id="nightDay" class="slider">
-            <div id="sliderCircle"></div>
+          <div id="night--day" class="slider">
+            <div id="slider--circle"></div>
             <img src="img/sun.svg" alt="sun icon">
             <img src="img/moon.svg" alt="sun icon">
           </div>
         </nav>
-      </header>
-      <section id="section1"> 
-        <!-- Change this into landingPageSection and include companyDiv in this section -->
-        <div id="introText">
-          <h1>
-            We create <br />
-            meaningful <br />
-            experiences
-          </h1>
-          <p>
-            We partner with global brands and emerging businesses <br />
-            to create exciting and meaningful experiences, whether <br />
-            digital or non-digital.
-          </p>
-        </div>
-        <div id="avatarContainer">
-          <img
-            id="avatar"
-            class="object"
-            src="img/Memoji.png"
-            alt="Image of Avatar"
-            type="image/png"
-            data-value="-10"
-          ></img>
-          <img
-            id="hand"
-            class="object"
-            src="img/MemojiHand.png"
-            alt="Image of Avatar"
-            type="image/png"
-            data-value="-13"
-          ></img>
-          <img
-            id="shadow"
-            class="object"
-            src="img/MemojiShadow.png"
-            alt="Image of Avatar"
-            type="image/png"
-            data-value="-10"
-          ></img>
-        </div>
-      </section>
-      <div id="companyDiv">
-        <p>I am trusted by awesome businesses:</p>
-        <div id="logos">
-          <div class="grayscale">
-            <img src="img/time4vps.svg" alt="your image">
-          </div>
-          <div class="grayscale">
-            <img src="img/hostens.svg" alt="your image">
-          </div>
-          <div class="grayscale">
-            <img src="img/fincell.svg" alt="your image">
-          </div>
-          <div class="grayscale">
-            <img src="img/IV.svg" alt="your image">
-          </div>
-          <div class="grayscale">
-            <img src="img/BA.svg" alt="your image">
-          </div>
-          <div class="grayscale">
-            <img src="img/VilniusUni.svg" alt="your image">
-          </div>
-          <div class="grayscale">
-            <img src="img/sorainen.svg" alt="your image">
-          </div>
-          <div class="grayscale">
-            <img src="img/bite.svg" alt="your image">
-          </div>
-        </div>
-      </div>
 
-      <section id="section2" class="section section--hidden">
-        <h1>Everyone is an artist</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-          <br>
-          <br>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-        <img id="placeholder" src="img/Desk.png" alt="">
+      <section id="landing--page"> 
+        <div id="text--avatar">
+          <div id="intro--text">
+            <h1>
+              We create <br />
+              meaningful <br />
+              experiences
+            </h1>
+            <p>
+              We partner with global brands and emerging businesses <br />
+              to create exciting and meaningful experiences, whether <br />
+              digital or non-digital.
+            </p>
+          </div>
+          <div id="avatar--container">
+            <img
+              id="avatar"
+              class="object"
+              src="img/Memoji.png"
+              alt="Image of Avatar"
+              type="image/png"
+              data-value="-10"
+            ></img>
+            <img
+              id="hand"
+              class="object"
+              src="img/MemojiHand.png"
+              alt="Image of Avatar"
+              type="image/png"
+              data-value="-13"
+            ></img>
+            <img
+              id="shadow"
+              class="object"
+              src="img/MemojiShadow.png"
+              alt="Image of Avatar"
+              type="image/png"
+              data-value="-10"
+            ></img>
+          </div>
+        </div>
+        <div id="company--logos">
+          <p>I am trusted by awesome businesses:</p>
+          <div id="logos">
+            <div class="grayscale">
+              <img src="img/time4vps.svg" alt="your image">
+            </div>
+            <div class="grayscale">
+              <img src="img/hostens.svg" alt="your image">
+            </div>
+            <div class="grayscale">
+              <img src="img/fincell.svg" alt="your image">
+            </div>
+            <div class="grayscale">
+              <img src="img/IV.svg" alt="your image">
+            </div>
+            <div class="grayscale">
+              <img src="img/BA.svg" alt="your image">
+            </div>
+            <div class="grayscale">
+              <img src="img/VilniusUni.svg" alt="your image">
+            </div>
+            <div class="grayscale">
+              <img src="img/sorainen.svg" alt="your image">
+            </div>
+            <div class="grayscale">
+              <img src="img/bite.svg" alt="your image">
+            </div>
+          </div>
+        </div>
       </section>
-      <section id="section3" class="section section--hidden">
-        <!-- Each section should become a card and have its own div that appears on scroll -->
-        <div id="sectionPink">
+
+      <section id="section--who" class="section section--hidden">
+        <div class="card">
+          <h1>Everyone is an artist</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            <br>
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+          <img id="desk" src="img/Desk.png" alt="">
+        </div>
+      </section>
+
+      <section id="section--what" class="section section--hidden">
+        <div id="section--pink" class="card">
           <div id="arm">
             <h1>💪🏻</h1>
           </div>
@@ -167,12 +170,16 @@
             </table>
           </div>
         </div>
-        <div id="sectionBlack">
+        <div id="section--black" class="card">
           <h2>Clients who are ready <br> to mingle</h2>
           <h1>❤️‍🔥</h1>
         </div>
       </section>
-      <section id="section4" class="section section--hidden"></section>
+
+      <section id="section--work" class="section section--hidden">
+        <div class="card"></div>
+      </section>
+
       <footer>
         <div>
           <h5 id="copyright"></h5>

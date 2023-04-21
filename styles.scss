@@ -1,5 +1,7 @@
 @use "variables";
 
+////////////////////// General Structure //////////////////////
+
 * {
   scroll-behavior: smooth;
   cursor: none;
@@ -7,7 +9,7 @@
 
 body {
   margin: 0;
-  #innerBody {
+  #inner--body {
     position: relative;
     max-width: 1400px;
     font-family: variables.$secondary-font;
@@ -65,31 +67,6 @@ body {
 
   .section--hidden {
     opacity: 0;
-    // transform: translateY(8rem);
-  }
-
-  .slider {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    border-radius: 30px;
-    border: 3px solid;
-    height: 30px;
-    width: 60px;
-    transition: all 0.2s ease-in-out;
-    z-index: 0;
-    img {
-      z-index: -1;
-      padding: 6px;
-    }
-    #sliderCircle {
-      position: absolute;
-      left: 0;
-      height: 30px;
-      width: 30px;
-      border-radius: 50%;
-    }
   }
 
   nav {
@@ -105,12 +82,12 @@ body {
       @include variables.flexDiv(row);
       justify-content: space-between;
       width: 300px;
-      .magnetic-wrap {
+      .magnetic--wrap {
         display: block;
         position: relative;
         justify-content: center;
         align-items: center;
-        .magnetic-area {
+        .magnetic--area {
           @include variables.flexDiv(row);
           justify-content: center;
           position: absolute;
@@ -120,7 +97,7 @@ body {
           right: -70px;
           border-radius: 50%;
           // border: 1px dashed black;
-          .my-button {
+          .my--button {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -133,16 +110,39 @@ body {
       }
     }
   }
-
-  #section1 {
+  .slider {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    #introText {
+    border-radius: 30px;
+    border: 3px solid;
+    height: 30px;
+    width: 60px;
+    transition: all 0.2s ease-in-out;
+    z-index: 0;
+    img {
+      z-index: -1;
+      padding: 6px;
+    }
+    #slider--circle {
+      position: absolute;
+      left: 0;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+    }
+  }
+
+  #text--avatar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    #intro--text {
       padding-top: 30px;
       width: 50%;
     }
-    #avatarContainer {
+    #avatar--container {
       @include variables.flexDiv(row);
       justify-content: center;
       padding-top: 50px;
@@ -164,7 +164,7 @@ body {
       }
     }
   }
-  #companyDiv {
+  #company--logos {
     @include variables.flexDiv(column);
     margin: -100px 0 80px;
     p {
@@ -193,16 +193,16 @@ body {
     }
   }
 
-  #section2 {
-    position: relative;
-    @include variables.flexDiv(column);
-    text-align: center;
-    border-radius: 40px;
-    height: 800px;
-    padding: 0 10%;
-    margin-bottom: 40px;
+  .card {
+    @include variables.cards(100%);
+  }
+
+  #section--who {
+    .card {
+      @include variables.flexDiv(column);
+    }
     overflow: hidden;
-    #placeholder {
+    #desk {
       position: absolute;
       width: 75%;
       margin-top: auto;
@@ -211,20 +211,16 @@ body {
     }
   }
 
-  #section3 {
+  #section--what {
     @include variables.flexDiv(row);
     justify-content: space-between;
     gap: 40px;
-    margin-bottom: 40px;
     h1 {
       font-size: 6rem;
       margin: 0;
     }
-    #sectionPink {
+    #section--pink {
       @include variables.flexDiv(column);
-      text-align: center;
-      border-radius: 40px;
-      height: 800px;
       width: 50%;
       #arm {
         @include variables.flexDiv(column);
@@ -237,35 +233,30 @@ body {
         text-align: center;
       }
     }
-    #sectionBlack {
+    #section--black {
       @include variables.flexDiv(column);
-      text-align: center;
-      border-radius: 40px;
-      height: 800px;
       width: 50%;
     }
   }
 
-  #section4 {
-    display: flex;
-    background-color: variables.$sixth-color;
-    border-radius: 40px;
-    height: 800px;
-    padding: 0 10%;
-    margin-bottom: 40px;
+  #section--work {
+    .card {
+      @include variables.flexDiv(column);
+    }
   }
 
   footer {
     @include variables.flexDiv(row);
     justify-content: center;
-    color: variables.$fourth-color;
   }
 }
 
-.lightTheme {
+////////////////////// Themes //////////////////////
+
+.light--theme {
   background-color: variables.$body-background;
   color: variables.$main-text-color;
-  #innerBody {
+  #inner--body {
     background-color: variables.$body-background;
   }
   #cursor {
@@ -294,37 +285,39 @@ body {
       img {
         fill: variables.$first-color;
       }
-      #sliderCircle {
+      #slider--circle {
         background-color: variables.$fourth-color;
       }
     }
   }
-  #section1 {
+  #landing--page {
     background-color: variables.$body-background;
-    #introText {
+    #intro--text {
       background-color: variables.$body-background;
     }
-    #avatarContainer {
+    #avatar--container {
       background-color: variables.$body-background;
     }
   }
-  #section2 {
-    background-color: variables.$first-color;
-    color: variables.$fourth-color;
+  #section--who {
+    .card {
+      background-color: variables.$first-color;
+      color: variables.$fourth-color;
+    }
     h1 {
       color: variables.$fourth-color;
     }
   }
-  #section3 {
+  #section--what {
     background-color: variables.$body-background;
-    #sectionBlack {
+    #section--black {
       background-color: #000;
       color: variables.$secondary-text-color;
       h2 {
         color: variables.$secondary-text-color;
       }
     }
-    #sectionPink {
+    #section--pink {
       background-color: variables.$third-color;
       color: variables.$fifth-color;
       h2 {
@@ -332,12 +325,20 @@ body {
       }
     }
   }
+  #section--work {
+    .card {
+      background-color: variables.$sixth-color;
+    }
+  }
+  footer {
+    color: variables.$fourth-color;
+  }
 }
 
-.darkTheme {
+.dark--theme {
   background-color: variables.$body-background-dark;
   color: variables.$main-text-color-dark;
-  #innerBody {
+  #inner--body {
     background-color: variables.$body-background-dark;
   }
   #cursor {
@@ -365,21 +366,21 @@ body {
       svg {
         fill: variables.$secondary-text-color-dark;
       }
-      #sliderCircle {
+      #slider--circle {
         background-color: variables.$secondary-text-color-dark;
       }
     }
   }
-  #section1 {
+  #landing--page {
     background-color: variables.$body-background-dark;
-    #introText {
+    #intro--text {
       background-color: variables.$body-background-dark;
     }
-    #avatarContainer {
+    #avatar--container {
       background-color: variables.$body-background-dark;
     }
   }
-  #companyDiv {
+  #company--logos {
     #logos {
       .grayscale {
         img {
@@ -388,23 +389,25 @@ body {
       }
     }
   }
-  #section2 {
-    background-color: variables.$secondary-text-color-dark;
-    color: variables.$secondary-color;
-    h1 {
+  #section--who {
+    .card {
+      background-color: variables.$secondary-text-color-dark;
       color: variables.$secondary-color;
+      h1 {
+        color: variables.$secondary-color;
+      }
     }
   }
-  #section3 {
+  #section--what {
     background-color: variables.$body-background-dark;
-    #sectionBlack {
+    #section--black {
       background-color: #fff;
       color: variables.$secondary-text-color-dark;
       h2 {
         color: variables.$body-background-dark;
       }
     }
-    #sectionPink {
+    #section--pink {
       background-color: variables.$third-color;
       color: variables.$fifth-color;
       h2 {
@@ -412,14 +415,24 @@ body {
       }
     }
   }
+  #section--work {
+    .card {
+      background-color: variables.$sixth-color;
+    }
+  }
+  footer {
+    color: variables.$fourth-color;
+  }
 }
+
+////////////////////// Responsive //////////////////////
 
 .responsive {
   @include variables.devices(tablet) {
     * {
       cursor: default;
     }
-    #innerBody {
+    #inner--body {
       margin: 0;
       padding: 0 20px;
     }
@@ -434,10 +447,10 @@ body {
         right: 20px;
       }
     }
-    #section1 {
+    #text--avatar {
       flex-direction: column-reverse;
       align-items: center;
-      #introText {
+      #intro--text {
         z-index: 1;
         width: 100%;
         text-align: center;
@@ -446,19 +459,21 @@ body {
           margin-top: -80px;
         }
       }
-      #avatarContainer {
+      #avatar--container {
         width: 100%;
         padding: 0;
         margin-top: 50px;
       }
     }
-    #companyDiv {
+    #company--logos {
       margin: 0 0 80px;
     }
-    #section3 {
+    #section--what {
       @include variables.flexDiv(column);
-      #sectionPink,
-      #sectionBlack {
+      gap: 0;
+      #section--pink,
+      #section--black {
+        box-sizing: border-box;
         width: 100%;
       }
     }
@@ -470,23 +485,25 @@ body {
         justify-content: space-around;
       }
     }
-    #section1 {
-      #avatarContainer {
-        padding: 0;
-        margin-top: 20px;
-        #avatar,
-        #hand,
-        #shadow {
-          max-height: 500px;
+    #landing--page {
+      #text--avatar {
+        #avatar--container {
+          padding: 0;
+          margin-top: 20px;
+          #avatar,
+          #hand,
+          #shadow {
+            max-height: 500px;
+          }
         }
       }
     }
-    #section2 {
-      #placeholder {
+    #section--who {
+      #desk {
         display: none;
       }
     }
-    #section3 {
+    #section--what {
       h2 {
         margin: 40px 10px;
       }
