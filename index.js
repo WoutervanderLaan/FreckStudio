@@ -24,7 +24,7 @@ class App {
   constructor() {
     this._setDate();
     this._initCursorSizeChange();
-    this._hideSections();
+    this._observeSections();
     this._initMagneticArea();
     this._avatarAnimate();
 
@@ -117,9 +117,8 @@ class App {
 
   ///////// Section related methods /////////
 
-  _hideSections() {
+  _observeSections() {
     allSections.forEach((section) => {
-      section.classList.add("section--hidden");
       this.#sectionObserver.observe(section);
     });
   }
