@@ -342,11 +342,11 @@ body footer {
 }
 
 .dark--theme {
-  background-color: #141e14;
+  background-color: #0d100d;
   color: #fff;
 }
 .dark--theme #inner--body {
-  background-color: #141e14;
+  background-color: #0d100d;
 }
 .dark--theme #cursor {
   background-color: #fff;
@@ -367,7 +367,7 @@ body footer {
   color: #e0e0e0;
 }
 .dark--theme nav {
-  background-color: #141e14;
+  background-color: #0d100d;
 }
 .dark--theme nav .slider {
   border-color: #2b553b;
@@ -379,13 +379,13 @@ body footer {
   background-color: #2b553b;
 }
 .dark--theme #landing--page {
-  background-color: #141e14;
+  background-color: #0d100d;
 }
 .dark--theme #landing--page #intro--text {
-  background-color: #141e14;
+  background-color: #0d100d;
 }
 .dark--theme #landing--page #avatar--container {
-  background-color: #141e14;
+  background-color: #0d100d;
 }
 .dark--theme #company--logos #logos .grayscale img {
   filter: invert(100%) grayscale(100%);
@@ -398,14 +398,14 @@ body footer {
   color: #ec8eaa;
 }
 .dark--theme #section--what {
-  background-color: #141e14;
+  background-color: #0d100d;
 }
 .dark--theme #section--what #section--black {
   background-color: #fff;
   color: #2b553b;
 }
 .dark--theme #section--what #section--black h2 {
-  color: #141e14;
+  color: #0d100d;
 }
 .dark--theme #section--what #section--pink {
   background-color: #ffe5eb;

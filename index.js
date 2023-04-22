@@ -111,6 +111,7 @@ class App {
         y: 1 * movingValue,
         yoyoEase: true,
         repeat: -1,
+        duration: 1,
       });
     });
   }
@@ -182,6 +183,7 @@ class App {
     });
 
     avatarContainer.style.opacity = "0";
+    shadow.style.opacity = this.#themeBoolean ? "0" : "1";
 
     const reloadImg = async function (boolean) {
       try {
