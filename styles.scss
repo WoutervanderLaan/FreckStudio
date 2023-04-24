@@ -33,11 +33,13 @@ body {
     font-family: variables.$main-font;
     margin-bottom: 40px;
     line-height: 1;
+    font-weight: 500;
   }
 
   h2 {
     font-size: 3rem;
     font-family: variables.$main-font;
+    font-weight: 500;
   }
 
   h3 {
@@ -60,6 +62,11 @@ body {
     font-family: variables.$secondary-font;
     font-weight: 400;
   }
+  h6 {
+    font-size: 1.5rem;
+    font-family: variables.$main-font;
+    font-weight: 400;
+  }
 
   section {
     transition: transform 1s, opacity 1s;
@@ -76,7 +83,7 @@ body {
     height: auto;
     width: 100%;
     #freck:hover span {
-      color: variables.$fifth-color;
+      color: variables.$secondary-color;
     }
     #menu {
       @include variables.flexDiv(row);
@@ -139,6 +146,9 @@ body {
     flex-direction: row;
     justify-content: center;
     #intro--text {
+      h1 {
+        font-weight: 800;
+      }
       padding-top: 30px;
       width: 50%;
     }
@@ -201,10 +211,16 @@ body {
     .card {
       @include variables.flexDiv(column);
     }
-    overflow: hidden;
+    h1 {
+      // font-weight: 400;
+      margin-bottom: 10px;
+    }
+    h6 {
+      margin: 0 0 20px;
+    }
     #desk {
       position: absolute;
-      width: 75%;
+      width: 70%;
       margin-top: auto;
       bottom: 0;
       z-index: 0;
@@ -222,13 +238,14 @@ body {
     #section--pink {
       @include variables.flexDiv(column);
       width: 50%;
+      text-align: center;
       #arm {
         @include variables.flexDiv(column);
-        height: 200px;
-        width: 200px;
+        height: 300px;
+        width: 300px;
         background-color: variables.$secondary-color;
         border-radius: 50%;
-        margin-top: 10%;
+        margin-top: 15%;
         justify-content: center;
         text-align: center;
       }
@@ -236,12 +253,42 @@ body {
     #section--black {
       @include variables.flexDiv(column);
       width: 50%;
+      padding: 0 5%;
+      h2 {
+        margin: 15% 0;
+      }
+      .skill--container {
+        @include variables.flexDiv(row);
+        flex-wrap: wrap;
+        justify-content: start;
+        gap: 20px;
+        .skill {
+          transition: all 0.1s ease;
+          p {
+            margin: 0;
+          }
+          width: fit-content;
+          padding: 10px 20px;
+          border-radius: 20px;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
     }
   }
 
   #section--work {
     .card {
       @include variables.flexDiv(column);
+      height: fit-content;
+      padding: 80px 0;
+      gap: 80px;
+      a {
+        h1 {
+          margin: 0;
+        }
+      }
     }
   }
 
@@ -301,7 +348,8 @@ body {
   }
   #section--who {
     .card {
-      background-color: variables.$first-color;
+      // background-color: variables.$first-color;
+      background: variables.$section-who-dark;
       color: variables.$fourth-color;
     }
     h1 {
@@ -315,6 +363,10 @@ body {
       color: variables.$secondary-text-color;
       h2 {
         color: variables.$secondary-text-color;
+      }
+      .skill {
+        background-color: variables.$body-background;
+        color: variables.$main-text-color;
       }
     }
     #section--pink {
@@ -391,7 +443,8 @@ body {
   }
   #section--who {
     .card {
-      background-color: variables.$secondary-text-color-dark;
+      // background-color: variables.$secondary-text-color-dark;
+      background: variables.$section-who-dark;
       color: variables.$secondary-color;
       h1 {
         color: variables.$secondary-color;
@@ -401,14 +454,21 @@ body {
   #section--what {
     background-color: variables.$body-background-dark;
     #section--black {
-      background-color: #fff;
+      // background-color: variables.$main-text-color-dark;
+      background: variables.$section-what-black-dark;
       color: variables.$secondary-text-color-dark;
       h2 {
-        color: variables.$body-background-dark;
+        // color: variables.$body-background-dark;
+        color: variables.$body-background;
+      }
+      .skill {
+        background-color: variables.$body-background-dark;
+        color: variables.$main-text-color-dark;
       }
     }
     #section--pink {
-      background-color: variables.$third-color;
+      // background-color: variables.$third-color;
+      background: variables.$section-what-pink-dark;
       color: variables.$fifth-color;
       h2 {
         color: variables.$fifth-color;
@@ -417,7 +477,8 @@ body {
   }
   #section--work {
     .card {
-      background-color: variables.$sixth-color;
+      // background-color: variables.$secondary-text-color-dark;
+      background: variables.$section-work-green-dark;
     }
   }
   footer {
@@ -475,11 +536,22 @@ body {
       #section--black {
         box-sizing: border-box;
         width: 100%;
+        .skill {
+          p {
+            font-size: 1.5rem;
+          }
+        }
       }
     }
   }
 
   @include variables.devices(mobile) {
+    h1 {
+      font-size: 3rem;
+    }
+    h6 {
+      font-size: 1.2rem;
+    }
     nav {
       #menu {
         justify-content: space-around;
@@ -499,6 +571,10 @@ body {
       }
     }
     #section--who {
+      .card {
+        height: fit-content;
+        padding: 0 10% 15%;
+      }
       #desk {
         display: none;
       }
@@ -506,10 +582,34 @@ body {
     #section--what {
       h2 {
         margin: 40px 10px;
+        font-size: 2.5rem;
+      }
+      #section--pink {
+        height: fit-content;
+        padding-bottom: 15%;
+        h2 {
+          font-weight: 600;
+        }
+        #arm {
+          width: 200px;
+          height: 200px;
+        }
+      }
+      #section--black {
+        .skill--container {
+          justify-content: center;
+          .skill {
+            width: 70%;
+          }
+        }
+        height: fit-content;
+        padding-bottom: 15%;
       }
     }
-    h1 {
-      font-size: 3.5rem;
+    #section--work {
+      h1 {
+        font-size: 2rem;
+      }
     }
   }
 }

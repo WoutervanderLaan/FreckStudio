@@ -29,6 +29,10 @@ $body-background-dark: #0d100d;
 $main-text-color-dark: #fff;
 $secondary-text-color-dark: #2b553b;
 $first-color-dark: #200246;
+$section-who-dark: radial-gradient(#9137ff, #4900a3);
+$section-what-pink-dark: radial-gradient(#ffe5eb, #ffb8c8);
+$section-what-black-dark: radial-gradient(#848484, #3a3a3a);
+$section-work-green-dark: radial-gradient(#2b7347, #2b553b);
 
 ////////// Mixins //////////
 @mixin flexDiv($flexDir) {
@@ -37,15 +41,12 @@ $first-color-dark: #200246;
   align-items: center;
 }
 
-@mixin section($flexDir) {
-}
-
 @mixin cards($cardWidth) {
   position: relative;
   box-sizing: border-box;
   height: 800px;
   border-radius: 40px;
-  padding: 0 10%;
+  padding: 0 8%;
   margin-bottom: 40px;
   text-align: center;
   @if $cardWidth {

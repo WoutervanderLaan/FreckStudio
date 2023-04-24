@@ -30,10 +30,12 @@ body h1 {
   font-family: "Roboto Slab", serif;
   margin-bottom: 40px;
   line-height: 1;
+  font-weight: 500;
 }
 body h2 {
   font-size: 3rem;
   font-family: "Roboto Slab", serif;
+  font-weight: 500;
 }
 body h3 {
   color: #000;
@@ -53,6 +55,11 @@ body h5 {
   font-family: "Rubik", sans-serif;
   font-weight: 400;
 }
+body h6 {
+  font-size: 1.5rem;
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+}
 body section {
   transition: transform 1s, opacity 1s;
 }
@@ -69,7 +76,7 @@ body nav {
   width: 100%;
 }
 body nav #freck:hover span {
-  color: #247301;
+  color: #ec8eaa;
 }
 body nav #menu {
   display: flex;
@@ -136,6 +143,9 @@ body #text--avatar #intro--text {
   padding-top: 30px;
   width: 50%;
 }
+body #text--avatar #intro--text h1 {
+  font-weight: 800;
+}
 body #text--avatar #avatar--container {
   display: flex;
   flex-direction: row;
@@ -196,22 +206,25 @@ body .card {
   box-sizing: border-box;
   height: 800px;
   border-radius: 40px;
-  padding: 0 10%;
+  padding: 0 8%;
   margin-bottom: 40px;
   text-align: center;
   width: 100%;
-}
-body #section--who {
-  overflow: hidden;
 }
 body #section--who .card {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+body #section--who h1 {
+  margin-bottom: 10px;
+}
+body #section--who h6 {
+  margin: 0 0 20px;
+}
 body #section--who #desk {
   position: absolute;
-  width: 75%;
+  width: 70%;
   margin-top: auto;
   bottom: 0;
   z-index: 0;
@@ -232,16 +245,17 @@ body #section--what #section--pink {
   flex-direction: column;
   align-items: center;
   width: 50%;
+  text-align: center;
 }
 body #section--what #section--pink #arm {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 200px;
-  width: 200px;
+  height: 300px;
+  width: 300px;
   background-color: #ec8eaa;
   border-radius: 50%;
-  margin-top: 10%;
+  margin-top: 15%;
   justify-content: center;
   text-align: center;
 }
@@ -250,11 +264,43 @@ body #section--what #section--black {
   flex-direction: column;
   align-items: center;
   width: 50%;
+  padding: 0 5%;
+}
+body #section--what #section--black h2 {
+  margin: 15% 0;
+}
+body #section--what #section--black .skill--container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 20px;
+}
+body #section--what #section--black .skill--container .skill {
+  transition: all 0.1s ease;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+body #section--what #section--black .skill--container .skill p {
+  margin: 0;
+}
+body #section--what #section--black .skill--container .skill:hover {
+  transform: scale(1.1);
 }
 body #section--work .card {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 80px 0;
+  gap: 80px;
+}
+body #section--work .card a h1 {
+  margin: 0;
 }
 body footer {
   display: flex;
@@ -311,7 +357,7 @@ body footer {
   background-color: #fff;
 }
 .light--theme #section--who .card {
-  background-color: #4900a3;
+  background: radial-gradient(#9137ff, #4900a3);
   color: #48a8e9;
 }
 .light--theme #section--who h1 {
@@ -326,6 +372,10 @@ body footer {
 }
 .light--theme #section--what #section--black h2 {
   color: #fff;
+}
+.light--theme #section--what #section--black .skill {
+  background-color: #fff;
+  color: #000;
 }
 .light--theme #section--what #section--pink {
   background-color: #ffe5eb;
@@ -391,7 +441,7 @@ body footer {
   filter: invert(100%) grayscale(100%);
 }
 .dark--theme #section--who .card {
-  background-color: #2b553b;
+  background: radial-gradient(#9137ff, #4900a3);
   color: #ec8eaa;
 }
 .dark--theme #section--who .card h1 {
@@ -401,21 +451,25 @@ body footer {
   background-color: #0d100d;
 }
 .dark--theme #section--what #section--black {
-  background-color: #fff;
+  background: radial-gradient(#848484, #3a3a3a);
   color: #2b553b;
 }
 .dark--theme #section--what #section--black h2 {
-  color: #0d100d;
+  color: #fff;
+}
+.dark--theme #section--what #section--black .skill {
+  background-color: #0d100d;
+  color: #fff;
 }
 .dark--theme #section--what #section--pink {
-  background-color: #ffe5eb;
+  background: radial-gradient(#ffe5eb, #ffb8c8);
   color: #247301;
 }
 .dark--theme #section--what #section--pink h2 {
   color: #247301;
 }
 .dark--theme #section--work .card {
-  background-color: #e0e0e0;
+  background: radial-gradient(#2b7347, #2b553b);
 }
 .dark--theme footer {
   color: #48a8e9;
@@ -474,8 +528,18 @@ body footer {
     box-sizing: border-box;
     width: 100%;
   }
+  .responsive #section--what #section--pink .skill p,
+  .responsive #section--what #section--black .skill p {
+    font-size: 1.5rem;
+  }
 }
 @media only screen and (max-width: 550px) {
+  .responsive h1 {
+    font-size: 3rem;
+  }
+  .responsive h6 {
+    font-size: 1.2rem;
+  }
   .responsive nav #menu {
     justify-content: space-around;
   }
@@ -488,13 +552,42 @@ body footer {
   .responsive #landing--page #text--avatar #avatar--container #shadow {
     max-height: 500px;
   }
+  .responsive #section--who .card {
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 0 10% 15%;
+  }
   .responsive #section--who #desk {
     display: none;
   }
   .responsive #section--what h2 {
     margin: 40px 10px;
+    font-size: 2.5rem;
   }
-  .responsive h1 {
-    font-size: 3.5rem;
+  .responsive #section--what #section--pink {
+    height: -moz-fit-content;
+    height: fit-content;
+    padding-bottom: 15%;
+  }
+  .responsive #section--what #section--pink h2 {
+    font-weight: 600;
+  }
+  .responsive #section--what #section--pink #arm {
+    width: 200px;
+    height: 200px;
+  }
+  .responsive #section--what #section--black {
+    height: -moz-fit-content;
+    height: fit-content;
+    padding-bottom: 15%;
+  }
+  .responsive #section--what #section--black .skill--container {
+    justify-content: center;
+  }
+  .responsive #section--what #section--black .skill--container .skill {
+    width: 70%;
+  }
+  .responsive #section--work h1 {
+    font-size: 2rem;
   }
 }/*# sourceMappingURL=styles.css.map */

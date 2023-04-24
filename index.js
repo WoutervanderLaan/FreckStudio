@@ -12,6 +12,9 @@ const avatarContainer = document.querySelector("#avatar--container");
 const avatar = document.querySelector("#avatar");
 const hand = document.querySelector("#hand");
 const shadow = document.querySelector("#shadow");
+const skewbrands = document.querySelectorAll(".skew--scroll");
+const skewbrandsDiv =
+  document.querySelector("#section--work").firstElementChild;
 
 class App {
   #cursorBoolean = false;
@@ -27,6 +30,7 @@ class App {
     this._observeSections();
     this._initMagneticArea();
     this._avatarAnimate();
+    this._initSkewOnScroll();
 
     window.addEventListener("resize", this._rearrange);
     document.addEventListener("DOMContentLoaded", this._rearrange);
@@ -34,6 +38,8 @@ class App {
     document.addEventListener("mousemove", this._cursorInit.bind(this));
     document.addEventListener("mouseover", this._cursorColorChange);
     nightDaySlider.addEventListener("click", this._lightDarkSwitch.bind(this));
+    skewbrandsDiv.addEventListener("mouseover", this._brandOpacityChange);
+    skewbrandsDiv.addEventListener("mouseleave", this._brandOpacityRestore);
   }
 
   ///////// General methods /////////
@@ -133,6 +139,31 @@ class App {
     this.#sectionObserver.unobserve(entry.target);
   }
 
+  _initSkewOnScroll() {
+    let proxy = { skew: 0 },
+      skewSetter = gsap.quickSetter(".card", "skewY", "deg"),
+      clamp = gsap.utils.clamp(-2, 2);
+
+    ScrollTrigger.create({
+      onUpdate: (self) => {
+        let skew = clamp(self.getVelocity() / -300);
+        if (Math.abs(skew) > Math.abs(proxy.skew)) {
+          proxy.skew = skew;
+          gsap.to(proxy, {
+            skew: 0,
+            duration: 0.8,
+            ease: "power3",
+            overwrite: true,
+            onUpdate: () => skewSetter(proxy.skew),
+          });
+        }
+      },
+    });
+
+    // make the right edge "stick" to the scroll bar. force3D: true improves performance
+    // gsap.set(".card", { transformOrigin: "right center", force3D: true });
+  }
+
   ///////// Magnetic btn related methods /////////
 
   _initMagneticArea() {
@@ -227,6 +258,34 @@ class App {
       document.querySelector("#intro--text").children[1].innerHTML =
         "We partner with global brands and emerging businesses <br> to create exciting and meaningful experiences, whether <br> digital or non-digital.";
     }
+  }
+
+  ///////// Other methods /////////
+
+  _brandOpacityChange(e) {
+    const target = e.target.closest("a");
+    if (!target) return;
+
+    skewbrands.forEach((brand) => {
+      if (brand !== target) {
+        gsap.to(brand, {
+          opacity: 0.2,
+        });
+      }
+      if (brand === target) {
+        gsap.to(brand, {
+          opacity: 1,
+        });
+      }
+    });
+  }
+
+  _brandOpacityRestore() {
+    skewbrands.forEach((brand) => {
+      gsap.to(brand, {
+        opacity: 1,
+      });
+    });
   }
 }
 
